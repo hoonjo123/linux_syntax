@@ -36,3 +36,4 @@ for a in {1..100}
 do
     echo "helloworld$a" >> test.txt
 done
+echo "end"
