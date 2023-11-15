@@ -220,5 +220,15 @@ chmod XXX test.txt
         특정파일의 소유자와 그룹을 새롭게 부여하는 것
         chown newuser1:johoon test.txt
         -rwxr--r--  1 [newuser1] johoon   12 11월 15 15:11 test.txt
-        
 
+kill-9[PID]
+# 프로세스 종료
+ps 프로세스 목록조회
+    -e 모든 프로세스
+    -f Full format표시
+        PID_프로세스ID, PPID_부모 프로세스 ID
+
+sudo apt-get install openjdk-11-jdk
+sudo apt-get install nginx -y
+sudo systemctl start nginx
+sudo systemctl stop nginx
