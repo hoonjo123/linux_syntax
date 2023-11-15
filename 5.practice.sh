@@ -16,14 +16,14 @@ echo "practice3 start"
 mkdir  mydir3
 cd mydir3
 for a in{1..100}; do
-    echo "hello world from file$a" > "file$a.txt"
+    echo "hello world from file$a" > file$a.txt
 done
 echo "practice complete"
 
 mkdir mydir3
 cd mydir3
 for a in{1..100}; do
-    echo "hello wolrd from file$a" >> "file$a".txt
+    echo "hello wolrd from file$a" >> file$a.txt
 done
 echo "practice complete"
 
@@ -33,6 +33,28 @@ cd mydir3
 for a in {1..100}
 do
     touch "file$a.txt"
-    echo "hello world from file$a" >> file$a.txt"
+    echo "hello world from file$a" >> file$a.txt
 done
 echo "script complete"
+
+
+
+file_count=0
+directory_count=0
+else_count=0
+for a in *  
+# 현재위치에서 모든파일
+do
+    if [ -f $a ]; then
+        ((file_count++))
+    elif [ -d $a ]; then
+        ((directory_count++))
+    else
+        ((else_count++))
+    fi
+done  
+
+echo "file's count : $file_count"
+echo "directory's's count : $file_count"
+echo "else_count : $file_count"
+
