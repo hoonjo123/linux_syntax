@@ -221,7 +221,7 @@ chmod XXX test.txt
         chown newuser1:johoon test.txt
         -rwxr--r--  1 [newuser1] johoon   12 11월 15 15:11 test.txt
 
-kill-9[PID]
+kill-9[PID] : 잘 안씀.. 깔끔하게 종료가 안 될 수가 있음.
 # 프로세스 종료
 ps 프로세스 목록조회
     -e 모든 프로세스
@@ -232,3 +232,48 @@ sudo apt-get install openjdk-11-jdk
 sudo apt-get install nginx -y
 sudo systemctl start nginx
 sudo systemctl stop nginx
+
+ps -e | grep -i "nginx"
+# nginx 가 죽었을 경우가 있기에..
+ps -ef | grep -i "nginx"
+# ps -ef : PI를 찾아서 강제로 죽일 때
+
+네트워크 관련
+    ipconfig or ifconfig - ip정보 등 네트워크 설정정보 출력
+    ping[hostname/ip] - 네트워크 연결상태 확인
+    nc-zv (넷켓)또는 telnet : 특징 port까지 열려있는지 확인
+        ex)nc -zv naver.com 443
+    netstat : 현재 서버에 연결된 네트워크 정보 출력
+    ssh : 원격 호스트와의 터미널 세션을 제공
+        ex)ssh [username]@[hostname/ip]
+    scp : 파일전송 
+        ex)ssp [source][destination]
+
+# 원격 호스트와의 터미널 세션을 제공 ex) ssh [username]@[hosrtname/ip]
+ssh
+# 파일 전송 ex) scp [source] [destination]
+scp
+# vi 에디터
+# nano , vim 에디터도 많이 사용
+# vi는 명령모드와 입력모드로 구성
+vi [파일명]
+# 입력모드
+# i     : 현재 커서부터 입력
+# o     : 다음줄 커서부터 입력
+# x     : 현재 커서가 위치한 단어 삭제
+# dd    : 현재 커서가 위치한 행 삭제
+# yy    : 현재 커서가 위치한 행 복사
+# p     : 현재 행 이후에 붙여넣기
+# 명령모드
+# esc
+# 파일 저장
+:w
+# 저장없이 vi 종료
+:q!
+ # 저장후 vi 종료
+:wq
+# a 다음커서이동
+# ctrl+b 한 페이지 위로 이동
+# ctrl+f 한 페이지 아래로 이동
+shift + g 맨 아래로
+gg 맨 위로 
